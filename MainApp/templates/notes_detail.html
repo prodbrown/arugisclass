@@ -1,0 +1,43 @@
+
+{% extends 'base/base.html' %}
+{% block content %}
+
+
+  <div class="card">
+      <div class="card-header">
+          <i class="fa fa-align-justify"></i>{{ notes.course }} </div>
+      <div class="card-body">
+
+                <h4> {{ notes.title }} <span style="color: red;"> | {{ notes.notes_date }}</span> </h4>
+
+                {% if user.is_cr %}
+                    <a href="{% url 'update-notes' notes.pk %}">Edit</a> -
+                    <a href="{% url 'delete-notes' notes.pk %}">Delete</a>
+                {% endif %}
+                
+                <hr>
+                <p>{{ notes.body|safe}}</p>
+
+
+                    {% if notes.header_file %}
+                        <a href="{{ notes.header_file.url }}" download>
+                            <i class="fas fa-download"></i> Download File - {{ notes.header_file }}
+                        </a> 
+                    {% endif %}
+        <br><br>
+
+                    {% if notes.header_image %}
+
+                        <img src="{{ notes.header_image.url }}" width="600" height="300"> <br><br>
+
+
+                   {% endif %}
+
+                <a href="{% url 'course-list' %}" class="btn btn-success">
+                    Back
+                </a>
+
+      </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+
+
+{% extends 'base/base.html' %}
+{% block content %}
+
+
+  <div class="card">
+      <div class="card-header">
+          <i class="fa fa-align-justify"></i> Delete: {{ notes.title }} </div>
+      <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <strong style="color:red;">Are you sure! 🤔</strong> <br> <br>
+                <button class="btn btn-secondary" >Delete</button>
+                
+
+            </form>
+
+      </div>
+  </div>
+
+{% endblock %}

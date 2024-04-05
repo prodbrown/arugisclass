@@ -1,0 +1,107 @@
+{% load static %}
+
+
+
+<div class="sidebar">
+    <nav class="sidebar-nav">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href=" {% url 'dashboard' %} "><i class="icon-speedometer"></i> Dashboard</a>
+            </li>
+            <!-- Administration Section Start -->
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="nav-icon icon-puzzle"></i>Administration</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {% url 'about' %} ">
+                            <i class="fa fa-list"></i>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">
+                            <i class="fa fa-list"></i>Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'services' %}">
+                            <i class="fa fa-list"></i>Services</a>
+                    </li>
+        {% if user.is_authenticated %}
+
+                </ul>
+            </li>
+            <!-- Administration Section END -->
+
+
+            <!-- Academic Section START -->
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="nav-icon icon-puzzle"></i>Academic</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'course-list' %}">
+                            <i class="fa fa-list"></i>Course</a>
+                    </li>
+
+                    {% if user.is_cr %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add-notes' %}">
+                                <i class="fa fa-plus-circle"></i>Add Notes</a>
+                        </li>
+
+                    {% endif %}
+
+                </ul>
+            </li>
+            <!-- Academic Section END -->
+
+            <!-- Posts Section START -->
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="nav-icon icon-puzzle"></i>Annoucements</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'post-view' %}">
+                            <i class="fa fa-list"></i>Posts</a>
+                    </li>
+
+                    {% if user.is_cr %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add-post' %}">
+                                <i class="fa fa-plus-circle"></i>Add Post</a>
+                        </li>
+
+                    {% endif %}
+                </ul>
+            </li>
+            <!-- Post Section END -->
+            {% if user.is_admin %}
+
+            <!-- Class Section START -->
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="nav-icon icon-puzzle"></i>Admin</a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin">
+                            <i class="fas fa-angle-double-right"></i>Admin Panel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'add-course' %}">
+                            <i class="fa fa-plus-circle"></i>Course Registration</a>
+                    </li>
+            {% endif %}
+
+                </ul>
+            </li>
+            <!-- Class Section END -->
+        </ul>
+
+        {% endif %}
+    </nav>
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+
+    {% block sidebar %}
+    {% endblock %}
+</div>

@@ -1,0 +1,24 @@
+
+
+{% extends 'base/base.html' %}
+{% block content %}
+
+
+  <div class="card">
+      <div class="card-header">
+          <i class="fa fa-align-justify"></i> {{ cats }} </div>
+      <div class="card-body">
+
+            {% for notes in course_posts %}
+
+                <a href="{% url 'notes_detail-view' notes.pk %}">{{ notes.title }} | <span style="color: red;">{{ notes.notes_date }}</span> </a>
+                <hr>
+            {% endfor %}
+                            <a href="{% url 'course-list' %}" class="btn btn-success">
+                    Back
+                </a>
+
+      </div>
+  </div>
+
+{% endblock %}

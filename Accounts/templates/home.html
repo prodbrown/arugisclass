@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}GIS-Management System {% endblock %}
+{% block content %}
+<marquee behavior="" direction="">Welcome To GIS Class Management System</marquee> <hr>
+<div class="animated fadeIn">
+<h2 style="color: blue; font-family: Arial, sans-serif; text-align: center;">CLASS MANAGEMENT SYSTEM HOME PAGE</h2>
+
+
+                <!-- Carousel -->
+        <div id="carouselExampleInterval" class="carousel slide mt-5" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="10000">
+              <div class="carousel-card bg-info text-white p-4 rounded"> <!-- Increased padding for larger cards -->
+                <div class="card-body">
+                  <h5 class="card-title">Welcome to Our GIS Sharing Platform</h5>
+                  <p class="card-text">Explore a comprehensive collection of GIS components carefully curated to enhance your projects. From mapping tools to data visualization resources, we've got everything you need to succeed in your GIS endeavors.</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-interval="2000">
+              <div class="carousel-card bg-success text-white p-4 rounded"> <!-- Increased padding for larger cards -->
+                <div class="card-body">
+                  <h5 class="card-title">Empower Your Projects with Precision</h5>
+                  <p class="card-text">Unlock the power of precision with our GIS components. Whether you're conducting spatial analysis or creating custom maps, our tools ensure accuracy and reliability, empowering you to make informed decisions.</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-card bg-warning text-dark p-4 rounded"> <!-- Increased padding for larger cards -->
+                <div class="card-body">
+                  <h5 class="card-title">Versatile Solutions for Every Need</h5>
+                  <p class="card-text">Our platform offers versatile solutions tailored to meet the diverse needs of GIS enthusiasts. From beginner-friendly tools to advanced functionalities, there's something for everyone to explore and utilize.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}

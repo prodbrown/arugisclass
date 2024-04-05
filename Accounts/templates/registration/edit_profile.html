@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+<title>Registration-cms</title>
+
+{% block content %}
+<div class="conainer">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Edit Profile</h1>
+                    {% if msg %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                    <div class="form-group">
+                        <form id="registrationForm" method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button id="registerBtn" class="btn btn-secondary">Update</button>
+                        </form>
+                    </div>
+                    <div class="text-center">
+                        <a href="{% url 'login' %}" class="btn btn-warning">Back to Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+
+{% endblock %}
+
+

@@ -1,0 +1,23 @@
+
+
+{% extends 'base/base.html' %}
+{% block content %}
+
+    <div class="card">
+        <div class="card-header">
+            <h4><i class="fa fa-align-justify"></i> Update Post</h4>
+        </div>
+        <div class="card-body">
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                <button class="btn btn-info" >Update</button>
+                
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

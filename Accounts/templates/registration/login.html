@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>Login - CMS</title>
+
+{% block content %}
+
+<br><br><br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 border rounded p-4">
+            <h2 class="text-center mb-3">Welcome Back</h2>
+
+            {% if msg %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ msg }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                </div>
+
+                <div class="form-group text-center">
+                    <button class="btn btn-primary btn-block">Login</button>
+                    <small class="form-text text-muted mt-3">
+                        <a href="{% url 'register' %}" class="text-secondary">Don't have an account? Register</a>
+                    </small>
+                    <small class="form-text text-muted">
+                        <a href="{% url 'custom_password_reset' %}" class="text-secondary">Forgot Password?</a>
+                    </small>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

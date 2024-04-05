@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <!-- Page content -->
+    <div class="content">
+        <h1>All Notes</h1> <hr>
+        <div class="post-list">
+            {% for notes in object_list %}
+            <div class="post-card">
+                <a href="{% url 'notes_detail-view' notes.pk %}">
+                    <h2>{{ notes.title }}</h2> <span style="color: red;">{{ notes.notes_date }}</span>
+
+                </a>
+                <hr>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+

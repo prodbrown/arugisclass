@@ -1,0 +1,51 @@
+
+
+
+
+{% extends 'base/base.html' %}
+{% block content %}
+
+
+  <div class="card">
+      <div class="card-header">
+          <i class="fa fa-align-justify"></i>{{ post.title }} <span style="color: red;">{{ post.post_date }}</span>
+
+      </div>
+
+      <div class="card-body">
+
+            {% if user.is_cr %}
+   
+                <a href="{% url 'update-post' post.pk %}">Edit</a> -
+                <a href="{% url 'delete-post' post.pk %}">Delete</a>
+            {% endif %}
+
+
+            <hr>
+            <p>{{ post.body|safe}}</p>
+
+            {% if post.post_file %}
+                <a href="{{ post.post_file.url }}" download>
+                    <i class="fas fa-download"></i> Download File - {{ post.post_file }}
+                </a> <br><br>
+            {% endif %}
+
+            {% if post.post_image %}
+
+                <img src="{{ post.post_image.url }}" width="500" height="300">
+
+
+            {% endif %}
+
+
+            <br><br>
+
+                <a href="{% url 'post-view' %}" class="btn btn-success">
+                    Back
+                </a>
+
+      </div>
+
+  </div>
+
+{% endblock %}

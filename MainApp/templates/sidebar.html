@@ -1,0 +1,28 @@
+<div class="sidebar">
+    <a href="{% url 'dashboard' %}">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+{% if user.is_authenticated %}
+    <a href="{% url 'course-list' %}">Courses</a>
+    <a href="{% url 'post-view' %}">Posts</a>
+
+    {% if user.is_cr %}
+         <a href="{% url 'add-notes' %}">Add Notes</a>
+         <a href="{% url 'add-post' %}">Add Post</a>
+         <a href="{% url 'user_list' %}">Users</a>
+    {% endif %}
+
+
+  
+
+
+    {% if user.is_admin %} 
+        <a href="{% url 'add-course' %}">Add Course</a>
+        <a href="admin">Admin Panel</a>
+    {% endif %} 
+
+    
+{% endif %}
+</div>
+

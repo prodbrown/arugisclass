@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+    <!-- Page content -->
+    <div class="content">
+        <h1 class="text-primary mb-4">Hello! Welcome to the GIS Class Management System</h1> <hr>
+        
+        <!-- Moving text using marquee tag -->
+        <marquee>Please Login to continue. Register if you don't have an account. </marquee> <hr>
+
+        <!-- Carousel -->
+        <div id="carouselExampleInterval" class="carousel slide mt-5" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="10000">
+              <div class="carousel-card bg-info text-white p-4 rounded"> <!-- Increased padding for larger cards -->
+                <div class="card-body">
+                  <h5 class="card-title">First Slide</h5>
+                  <p class="card-text">This is the text content for the first slide. You can place any text here.</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-interval="2000">
+              <div class="carousel-card bg-success text-white p-4 rounded"> <!-- Increased padding for larger cards -->
+                <div class="card-body">
+                  <h5 class="card-title">Second Slide</h5>
+                  <p class="card-text">This is the text content for the second slide. You can place any text here.</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="carousel-card bg-warning text-dark p-4 rounded"> <!-- Increased padding for larger cards -->
+                <div class="card-body">
+                  <h5 class="card-title">Third Slide</h5>
+                  <p class="card-text">This is the text content for the third slide. You can place any text here.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <br>
+
+        <!-- Login and Registration buttons -->
+        <div class="text-center">
+            <a href="{% url 'login' %}" class="btn btn-lg btn-primary mr-3">Login</a>
+            <a href="{% url 'register' %}" class="btn btn-lg btn-success">Register</a>
+
+        </div>
+    </div>
+
+{% endblock %}

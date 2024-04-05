@@ -1,0 +1,19 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="card">
+<h1 class="card-title text-center text-primary">User Registration</h1>
+
+        <div class="card-body">
+            <form id="registrationForm" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button id="registerBtn" class="btn btn-secondary">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

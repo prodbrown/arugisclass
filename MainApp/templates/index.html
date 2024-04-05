@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+/* CSS styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(90deg, #5D54A4, #7C78B8);       
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {   
+    background-color: #fff;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    width: 400px; /* Adjust width */
+    height: 300px; /* Adjust height */
+}
+
+.dashboard__content {
+    padding: 30px;
+    text-align: center; /* Center align content */
+}
+
+.dashboard__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.dashboard__subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: GREEN;
+}
+
+.button {
+    background-color: #4C489D;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    margin-right: 10px; /* Add space between buttons */
+}
+
+.button:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+}
+
+.button:hover {
+    background-color: #6A679E;
+}
+
+.button__icon {
+    margin-left: 8px;
+}
+
+
+</style>
+</head>
+<body>
+<!-- HTML content -->
+<div class="container">
+    <div class="dashboard__content">
+        <h1 class="dashboard__title">Welcome to GIS CLASS</h1>
+        <p class="dashboard__subtitle">Please login or register to continue</p> <hr> <br><br><br>
+        <a href="{% url 'login' %}" class="button">
+            Log In Now
+            <i class="button__icon fas fa-chevron-right"></i>    
+        </a> 
+
+        <a href="{% url 'register' %}" class="button">
+            Register Now
+            <i class="button__icon fas fa-chevron-right"></i>
+        </a>
+    </div>    
+</div>
+</body>
+</html>

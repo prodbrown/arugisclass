@@ -1,0 +1,18 @@
+
+{% extends 'base/base.html' %}
+{% block content %}
+
+    <div class="card">
+        <div class="card-header">
+            <h4><i class="fa fa-align-justify"></i> Add Course</h4>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
